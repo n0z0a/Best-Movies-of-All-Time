@@ -1,0 +1,32 @@
+<html>
+<head>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            color: black;
+            background-color: #f0f0f0; /* Change background color to a nice color */
+            font-size: 10pt;
+            text-align: center;
+            padding: 20px; /* Add padding to create space around the content */
+        }
+        img {
+            max-width: 40%; /* Adjust as needed */
+            height: auto; /* Maintain aspect ratio */
+            display: block; /* Remove whitespace */
+            margin: 0 auto; /* Center horizontally */
+            border: 2px solid #ccc; /* Add a border around the image */
+            border-radius: 8px; /* Add rounded corners to the border */
+            padding: 5px; /* Add padding to create space between the image and the border */
+        }
+    </style>
+</head>
+<body>
+    {% for movie in movies_info %}
+    <h1>{{ movie.title }}</h1>
+    <h2>{{ movie.tagline }}</h2>
+    <h3>Genre(s): {{ movie.genre }}</h3>
+    <img src="{{ movie.poster }}">
+    <h4><a href="{{ movie.url }}">{{ movie.url }}</a></h4>
+    {% endfor %}
+</body>
+</html>
